@@ -1,0 +1,19 @@
+#include <iostream>
+int addition (int a, int b)
+{
+  int r;
+  r= a+b;
+  std::cout<<&a;
+  return 0;
+}
+
+int main(void)
+{
+  int a,b,c;
+  a=5;
+  b=4;
+  c=addition(a,b);
+  std::cout<<"El resultado es "<<c;
+  std::cout<<&a;
+  return 0;
+}

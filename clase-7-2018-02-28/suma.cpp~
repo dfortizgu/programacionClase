@@ -1,0 +1,12 @@
+#include <iostream>
+int suma (int a, int b){
+
+  return a+b;
+
+}
+
+int main(void){
+
+  std::cout<< suma(4,30);
+  
+}

@@ -1,0 +1,13 @@
+#include <iostream>
+
+int holaMundo (void){
+
+  std::cout<<"Hola Mundo\n";
+  
+}
+
+int main (void){
+
+  holaMundo();
+  
+}

@@ -1,0 +1,9 @@
+#include <iostream>
+int main (){
+
+  int age = 0;
+  std::cout << "¿Cual es su edad?\n";
+  std::cin >> w;
+  std::cout << "Su edad: " << w << "años\n";  
+  return 0;
+}
