@@ -73,7 +73,7 @@ Para escribir varios if else
 
 Esto puede escribrise de forma mas ordenada con Switch
 
-     switch(a)
+     switch(a){
 	case 0:
 	  A(a);
 	  break;
@@ -88,3 +88,5 @@ Esto puede escribrise de forma mas ordenada con Switch
 
 	default:
 	  D(a);
+
+	}
