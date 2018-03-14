@@ -1,0 +1,90 @@
+Ciclo while
+
+Sintaxis
+
+	while(condicion) statement
+
+Comparado con el for solo se tiene la condicion; en el ciclo while la
+incializacion y el cambio se encuentran por fuera de los parentesis, se ubican
+en el statement.
+La inicializacion se realiza antes del ciclo por fuera, el cambio se ubica
+dentro del statement.
+
+Ej.
+
+	n=10
+	while (n>0){
+
+	      cout << n << ",";
+	      --n;
+	      
+	      
+	}
+
+
+Ciclo do-while
+
+Sintaxis
+
+	do statement while (condition);
+
+Se ejecuta al menos una vez, es decir, ejecuta el codigo una vez y luego si mira la
+condicion para ejecutarla de nuevo
+
+Ej.
+	
+
+	int suma (int a, int b){
+ 	     int i=a, sum=0;
+	     do{
+		sum+=i;
+		i++;
+		}
+		while(i<=b);
+ 		return sum;
+	}
+
+
+Los ciclos for pueden tener condiciones mas complejas
+
+Ej.
+	for( i=0,n=100 ; i<=100 ; 1++,n--){
+
+	     //Codigo
+	}
+
+
+Switch
+
+Para escribir varios if else
+
+     if(a==0){
+	A(a);
+	}
+     else if(a==1){
+     	B(a);
+	}
+     else if(a==2){
+        C(a);
+	}
+     else{
+	D(a);
+	}
+
+Esto puede escribrise de forma mas ordenada con Switch
+
+     switch(a)
+	case 0:
+	  A(a);
+	  break;
+
+	case 1:
+	  B(a);
+	  break;
+
+	case 2:
+	  C(a);
+	  break;
+
+	default:
+	  D(a);

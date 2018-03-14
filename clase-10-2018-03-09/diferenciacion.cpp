@@ -7,6 +7,7 @@ double fdevcent(double x, double h);
 double fdevrichforw(double x, double h);
 double fdevrichcent(double x, double h);
 
+
 int main(void)
 {
   double x = M_PI/3;
