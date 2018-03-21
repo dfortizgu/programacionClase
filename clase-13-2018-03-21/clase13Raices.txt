@@ -1,0 +1,10 @@
+Obtencion de raices de funciones
+
+1) Graficar la funcion y ver en que punto aproximadamente da 0
+   En gnuplot se puden definir funciones y colocar los intervalos en los
+   cuales grafica, ej:
+      gnuplot f(x)=x*cosh(50/x)-x-10
+      gnuplot [0:][-1:1]f(x)
+
+      [0:]restringe el valor minimo de x en 0 y el maximo lo deja libre
+      [1:1] restringe los valores en y entre -1 y 1
