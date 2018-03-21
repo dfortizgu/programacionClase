@@ -1,0 +1,28 @@
+Para usar los punteros a funciones con el estandar c++11 se usa:
+
+  using ftpr = double(double)
+
+Esto significa que cuando se use "ftpr" (puede tener cualquier nombre que se
+desee) se hace referencia a que se usa una funcion que retorna un double y
+recibe un double, si se deseara ingresar una funcion que retorna un double y
+recibe dos parametros double seria
+
+  using ftpr = double(double, double)
+
+Para usarlo como parametro se tendria por ejemplo
+
+  double trapezoid_regular(const double a, const double b, const int n, fptr func);
+
+donde func seria la funcion utilizada
+
+Para usarlo de la forma antigua se usaria
+
+  double trapezoid_regular(const double a, const double b, const int n, double (*func)(double));
+
+Donde el primer double hace referencia al valor que retorna la funcion y el
+del parentesis los parametros que recibe la funcion
+
+Para usar using se debe compilar usando la banderilla de c++11
+
+Al momento de llamarlo se podria tener con el ejemplo anterior
+  trapezoid_regular(0,M_PI,20,std::sin)
