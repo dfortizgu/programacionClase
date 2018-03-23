@@ -1,0 +1,53 @@
+Para escribir se puede o de la forma usual con cuot y luego redireccionando a
+otro archivo, tambien se puede
+
+ 1. #include <fstream>
+ 2. se declara un objeto
+
+       std::ofstram fout("datosfout.txt);
+       Esto permite escribir por medio de c++ en un archivo
+
+ 3. para decirle que imprimir
+
+    	fout << ...
+	misma sintaxis que cout
+
+ 4. se debe "cerrar fout
+
+       	fout.close();
+
+Tambien es posible leer archivos. Ej:
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+void read_numbers(std::string name);
+
+int main(void){
+  read_numbers("datosfout.txt");
+  read_numbers("datosfout2.txt");
+  return 0;
+}
+
+void read_numbers(std::string name){
+
+ //Se declara el objeto a leer
+
+  std::ifstream fin(name);
+  int n;
+  double x;
+
+  //Por como esta construido una vez fin termina de leer se vuelve falso,
+  entonces se introduce en un while para manejarlo
+
+  while (fin){
+
+  //Lo que lee lo mete en las varaibles n y x
+
+
+    fin >> n >> x;
+    std::cout << n << "\t" << x << std::endl;
+  }
+  fin.close();
+}
