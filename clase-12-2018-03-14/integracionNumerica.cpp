@@ -12,14 +12,14 @@ double simpson_richardson(const double a, const double b, const int n, fptr func
 int main(void){
   std::cout.precision(16);
   const int N = 20;
-  std::cout << "Trapecio regular (n=20) es : " << trapezoid_regular(0, 5*M_PI/4, N, funcion) << "\n";
-  std::cout << "Trapecio regular (n=40) es : " << trapezoid_regular(0, 5*M_PI/4, 2*N, funcion) << "\n";
-  std::cout << "Trapecio richardson (n=20) es : " << trapezoid_richardson(0, 5*M_PI/4, N, funcion) << "\n";
-  std::cout << "Trapecio richardson (n=40) es : " << trapezoid_richardson(0, 5*M_PI/4, 2*N, funcion) << "\n";
-  std::cout << "Simpson regular (n=20) es : " << simpson_regular(0, 5*M_PI/4, N, funcion) << "\n";
-  std::cout << "Simpson regular (n=40) es : " << simpson_regular(0, 5*M_PI/4, 2*N, funcion) << "\n";
-  std::cout << "Simpson richardson (n=20) es : " << simpson_richardson(0, 5*M_PI/4, N, funcion) << "\n";
-  std::cout << "Simpson richardson (n=40) es : " << simpson_richardson(0, 5*M_PI/4, 2*N, funcion) << "\n";
+  std::cout << "Trapecio regular (n=20) es : " << trapezoid_regular(0, M_PI, N, funcion) << "\n";
+  std::cout << "Trapecio regular (n=40) es : " << trapezoid_regular(0, M_PI, 2*N, funcion) << "\n";
+  std::cout << "Trapecio richardson (n=20) es : " << trapezoid_richardson(0, M_PI, N, funcion) << "\n";
+  std::cout << "Trapecio richardson (n=40) es : " << trapezoid_richardson(0, M_PI, 2*N, funcion) << "\n";
+  std::cout << "Simpson regular (n=20) es : " << simpson_regular(0, M_PI, N, funcion) << "\n";
+  std::cout << "Simpson regular (n=40) es : " << simpson_regular(0, M_PI, 2*N, funcion) << "\n";
+  std::cout << "Simpson richardson (n=20) es : " << simpson_richardson(0, M_PI, N, funcion) << "\n";
+  std::cout << "Simpson richardson (n=40) es : " << simpson_richardson(0, M_PI, 2*N, funcion) << "\n";
 
   return 0;
 }
@@ -27,7 +27,7 @@ int main(void){
 //Para cualquier funcion solo es necesario cambiar "funcion"
 
 double funcion(double x){
-  return (std::cos(2*x)/std::exp(x));
+  return std::sin(x);
 }
 
 double trapezoid_regular(const double a, const double b, const int n, fptr func){

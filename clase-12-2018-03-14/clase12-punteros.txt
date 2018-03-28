@@ -1,5 +1,6 @@
 Para usar los punteros a funciones con el estandar c++11 se usa:
 
+  (va por fuera de la funcon main, puesde ser despues de los include)
   using ftpr = double(double)
 
 Esto significa que cuando se use "ftpr" (puede tener cualquier nombre que se
