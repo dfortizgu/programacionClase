@@ -16,9 +16,13 @@ int main(void){
   return 0;
 }
 
+//Funcion
+
 double funcion(double x){
   return std::sin(x);
 }
+
+//Derivada de la funcion
 
 double derivada(double x){
   return std::cos(x);
