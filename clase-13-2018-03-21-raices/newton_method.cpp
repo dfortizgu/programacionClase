@@ -12,20 +12,20 @@ int main(void){
   std::cout.setf(std::ios::scientific);
 
 
-  std::cout<<newton_root(1, 1.0e-8, 100, funcion, derivada)<<"\n";
+  std::cout<<newton_root(1, 1.0e-15, 100, funcion, derivada)<<"\n";
   return 0;
 }
 
 //Funcion
 
 double funcion(double x){
-  return std::sin(x);
+  return x*x-3;
 }
 
 //Derivada de la funcion
 
 double derivada(double x){
-  return std::cos(x);
+  return 2*x;
 }
 
 double newton_root(double xi, double eps, int nmax, fpt func, fpt dev){
