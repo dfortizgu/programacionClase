@@ -12,12 +12,13 @@ int main(void){
 
 void read_numbers(std::string name){
   std::ifstream fin(name);
-  //int n;
-  //double x;
-  std::string line;
-  while (!fin.eof()){
-    getline(fin, line);
-    std::cout<<line<<"\n";
+  int n;
+  double x;
+
+  while (fin){
+    fin >> n >> x;
+    if(fin.eof())break;
+    std::cout << n << "\t" << x << std::endl;
   }
   fin.close();
 }

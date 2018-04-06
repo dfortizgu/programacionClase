@@ -4,7 +4,7 @@ otro archivo, tambien se puede
  1. #include <fstream>
  2. se declara un objeto
 
-       std::ofstram fout("datosfout.txt);
+       std::ofstream fout("datosfout.txt);
        Esto permite escribir por medio de c++ en un archivo
 
  3. para decirle que imprimir
