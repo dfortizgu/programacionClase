@@ -1,0 +1,43 @@
+Declaracion de arreglos
+
+	    int data[100000];
+	    
+	    esto abre un espacio de memoria para 100000 de enteros en la memoria
+	    todo en un espacio de memoria continuo
+
+	    El primer elemento del arreglo tiene indice 0, y el ultimo tiene
+	    indice n-1 para
+
+	    Loos arreglos son homogeneos, es decir que todos son del mismo tipo
+	    de dato
+
+	    Para acceder al octavo elemento seria data[7];
+
+Arreglos con array(C++11)
+	    Declaracion:
+	    std::array <int,1000000> data;
+
+	    Uso:
+	    data[7];
+
+Vectores (C++11)
+	    Declaracion:
+	    std::vector<int> data;
+	    data.resize(1000000);
+	    Permite cambiar el tamaño de memoria, memoria dinamica
+
+	    Uso:
+	    data[7];
+
+Para usar un arreglo como un parametro de una funcion se hace:
+
+     double mean(const std::vector<double> &data)
+
+Se usa el & para pasar por referencia y no perder memoria copiando y el const
+para que no se modifique dentro de la funcion
+
+para usar los arreglos antiguos se hace
+
+     double mean(const double a[], int size)
+
+se le debe pasar el tamaño del arreglo y poner const porque por defecto el arreglo se pasa por referencia
