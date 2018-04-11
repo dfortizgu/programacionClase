@@ -11,7 +11,6 @@ int main(void){
 
 double promedio(std::string name){
   std::ifstream fin(name);
-  std::ifstream pin(name);
   double sum = 0;
   double m;
   double n = 0;
@@ -19,15 +18,10 @@ double promedio(std::string name){
   while (fin){
     fin >> m >> x;
     if(fin.eof())break;
+    sum+=m;
     n++;
   }
   fin.close();
 
-  while(pin){
-    pin >> m >> x;
-    if(pin.eof())break;
-    sum+=m;
-  }
-  pin.close();
   return sum/n;
 }
