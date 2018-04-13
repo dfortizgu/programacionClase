@@ -1,0 +1,31 @@
+Matrices con arreglos viejos
+Para una matriz se declara
+     int matriz [3][5]
+Esto es una matriz de 3 filas y 5 columnas
+Sintaxis
+	matriz [1][3]
+
+Para pasar de un areglo bi dimensional a unidimensional se tendria
+
+     Indice bidimensional
+     A[i][j]
+
+     Indice Unidimensional
+     A[i*N+j] donde N es el numero de columnas
+
+
+Puntero guarda direcciones de memoria
+
+Declarar punteros
+
+	 Se tiene la variable
+	 int a =10
+	 //El puntero a esa variable(su direccion de memoria)
+	 int*ptr = &a
+	 //ptr guarda la direccion de memoria de a
+
+Al imprimir ptr se imprime la direccion de memoria de a, al igaul que &a,
+&ptr imprime la direccion de memoria de ptr y *ptr imprime lo que esta guardado
+en la direccion de memoria que almacena, en este caso 10
+
+Los punteros se incializan en "cero" como int*ptr=nullptr
