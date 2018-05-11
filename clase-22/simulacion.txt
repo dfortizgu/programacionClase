@@ -1,0 +1,34 @@
+Se debe determinar el cuerpo y la evolucion del mismo en el tiempo
+
+cuerpo
+
+	struct particle{
+	       double x,y,z;
+	       double vx,vy,vz;
+	       double Fx,Fy,Fz;
+	       double rad;
+	       double mass;
+	
+	}
+
+Evolucion
+
+int main(void)
+{
+  Particle ball;
+
+  // start system
+  initial_conditions(ball);
+  compute_force(ball);
+  start_integration(ball, DT);
+  print(ball, 0.0);
+
+  // evolve
+  for(int istep = 0; istep < NSTEPS; ++istep) {
+    time_integration(ball, DT);
+    compute_force(ball);
+    print(ball, istep*DT);
+  }
+  
+  return 0;
+}
