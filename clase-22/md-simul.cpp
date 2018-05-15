@@ -2,8 +2,13 @@
 
 void initial_conditions(Particle & body)
 {
-  body.Ry = 1.6598;
-  body.Vx = 0.23698;
+  body.Rx = 0;
+  body.Ry = 0;
+  body.Rz = 2;
+
+  body.Vx = 0.1;
+  body.Vy = 0;
+  body.Vz = 0;
 
   body.rad = 0.235;
   body.mass = 0.29698;
@@ -15,23 +20,23 @@ void compute_force(Particle & body)
   body.Fx = body.Fy = body.Fz = 0.0;
 
   // gravitational force
-  body.Fy += body.mass*G;
+  body.Fz += body.mass*G;
 
   // force with ground
-  double deltag = body.rad - body.Ry;
+  double deltag = body.rad - body.Rz;
   if (deltag > 0) {
-    body.Fy += K*deltag;
-    //body.Fy -= 1.9876*body.Vy; 
-  }
-  //Wall
-  double deltaWx =body.rad -(body.Rx-0.5);
-  if(deltaWx < 0){
-    body.Fx +=K*deltaWx;
+    body.Fz += K*deltag;
+    //body.Fy -= 1.9876*body.Vy;
   }
 
-  double deltaWy =body.rad -(body.Ry-0.5);
-  if(deltaWy < 0){
-    body.Fx +=K*deltaWy;
+  double deltawx1 = body.rad + body.Rx - 5;
+  if(deltawx1 < 0){
+    body.Fx-=K*deltawx1;
+  }
+
+  double deltawy1 = body.rad + body.Ry - 5;
+  if(deltawy1 > 0){
+    body.Fy-=K*deltawy1;
   }
 }
 
@@ -48,19 +53,19 @@ void start_integration(Particle & body, const double & dt)
   body.Vx += body.Fx*dt/(body.mass);
   body.Vy += body.Fy*dt/(body.mass);
   body.Vz += body.Fz*dt/(body.mass);
-  body.Rx += body.Vx*dt; 
-  body.Ry += body.Vy*dt; 
-  body.Rz += body.Vz*dt; 
+  body.Rx += body.Vx*dt;
+  body.Ry += body.Vy*dt;
+  body.Rz += body.Vz*dt;
 }
 
 void print(Particle & body, double time)
 {
-  std::cout << time << "  " 
-            << body.Rx << "  "
+  std::cout << body.Rx << "  "
             << body.Ry << "  "
             << body.Rz << "  "
             << body.Vx << "  "
             << body.Vy << "  "
             << body.Vz << "  "
+            << time << "  "
             << "\n";
 }

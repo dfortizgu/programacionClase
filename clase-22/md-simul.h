@@ -1,8 +1,8 @@
 #include <iostream>
-#include "particle.h"   
+#include "particle.h"
 
 const double G = -9.81;
-const int NSTEPS = 1000;
+const int NSTEPS = 500;
 const double DT = 0.01;
 const double K = 253.57;
 
