@@ -2,12 +2,12 @@
 
 void initial_conditions(Particle & body)
 {
-  body.Rx = 0;
-  body.Ry = 0;
+  body.Rx = 2;
+  body.Ry = 2;
   body.Rz = 2;
 
   body.Vx = 0.1;
-  body.Vy = 0;
+  body.Vy = 0.1;
   body.Vz = 0;
 
   body.rad = 0.235;
@@ -29,15 +29,31 @@ void compute_force(Particle & body)
     //body.Fy -= 1.9876*body.Vy;
   }
 
-  double deltawx1 = body.rad + body.Rx - 5;
-  if(deltawx1 < 0){
-    body.Fx-=K*deltawx1;
+  //Wall x 5
+  double deltawx5  = body.rad +body.Rx-5;
+  if(deltawx5  > 0){
+    body.Fx -=K*deltawx5 ;
   }
 
-  double deltawy1 = body.rad + body.Ry - 5;
-  if(deltawy1 > 0){
-    body.Fy-=K*deltawy1;
+   //Wall x 0
+  double deltawx0  = body.rad -body.Rx;
+  if(deltawx0  > 0){
+    body.Fx +=K*deltawx0 ;
   }
+
+    //Wall y 5
+  double deltawy5  = body.rad +body.Ry-5;
+  if(deltawy5  > 0){
+    body.Fy -=K*deltawy5 ;
+  }
+
+   //Wall y 0
+  double deltawy0  = body.rad -body.Ry;
+  if(deltawy0  > 0){
+    body.Fx +=K*deltawy0 ;
+  }
+    
+
 }
 
 void start_integration(Particle & body, const double & dt)

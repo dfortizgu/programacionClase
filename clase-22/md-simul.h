@@ -2,7 +2,7 @@
 #include "particle.h"
 
 const double G = -9.81;
-const int NSTEPS = 500;
+const int NSTEPS = 10000;
 const double DT = 0.01;
 const double K = 253.57;
 
