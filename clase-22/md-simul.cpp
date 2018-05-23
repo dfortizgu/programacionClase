@@ -2,13 +2,13 @@
 
 void initial_conditions(Particle & body)
 {
-  body.Rx = 2;
-  body.Ry = 2;
-  body.Rz = 2;
+  body.Rx = 2.5;
+  body.Ry = 2.5;
+  body.Rz = 4;
 
-  body.Vx = 0.1;
+  body.Vx = 0.2;
   body.Vy = 0.1;
-  body.Vz = 0;
+  body.Vz = 0.4;
 
   body.rad = 0.235;
   body.mass = 0.29698;
@@ -20,13 +20,13 @@ void compute_force(Particle & body)
   body.Fx = body.Fy = body.Fz = 0.0;
 
   // gravitational force
-  body.Fz += body.mass*G;
+  //body.Fz += body.mass*G;
 
   // force with ground
   double deltag = body.rad - body.Rz;
   if (deltag > 0) {
     body.Fz += K*deltag;
-    //body.Fy -= 1.9876*body.Vy;
+    //body.Fz -= 0.05*body.Vz;
   }
 
   //Wall x 5
@@ -50,9 +50,16 @@ void compute_force(Particle & body)
    //Wall y 0
   double deltawy0  = body.rad -body.Ry;
   if(deltawy0  > 0){
-    body.Fx +=K*deltawy0 ;
+    body.Fy +=K*deltawy0 ;
   }
-    
+
+  //Wall z 5
+  double deltawz5  = body.rad +body.Rz-5;
+  if (deltawz5  > 0){
+    body.Fz -=K*deltawz5 ;
+  }
+
+  
 
 }
 
